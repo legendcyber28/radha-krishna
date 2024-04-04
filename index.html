@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Protected File</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 90%;
+            margin-top: 50px;
+        }
+        
+        #password {
+            width: calc(100% - 100px);
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            width: 100px;
+            padding: 10px;
+            background-color: salmon;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        p#message {
+            color: red;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+            }
+            
+            #password {
+                width: calc(100% - 20px);
+            }
+            
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Password to Access File</h1>
+        <input type="password" id="password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="message"></p>
+    </div>
+    <div class="content">
+        <p>
+            <img src="https://media.licdn.com/dms/image/D5622AQHAo0nlAhKeJw/feedshare-shrink_800/0/1703352155851?e=2147483647&v=beta&t=ogE4frzs1iI6HSWhepZOSpeEFF-y2a2CDcBlvn8moxU" height="400" width="350" alt="">
+        </p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "ps123") {
+                window.location.href = "about.html";
+            } else {
+                document.getElementById("message").innerText = "Incorrect password. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>

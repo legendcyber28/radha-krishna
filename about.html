@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Protected File</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F3CCF3;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pas {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: rgb(255, 0, 0); /* Red color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            animation: blinker 1.5s linear infinite;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            margin: 20px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 100%; /* Ensure images don't exceed container width */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .audio-player {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+        @media screen and (max-width: 768px) {
+            .content {
+                padding: 10px;
+            }
+            .image-container {
+                margin: 10px;
+            }
+        }
+        .exciting-image {
+            animation: blinker 2s linear infinite;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click to Access</h1>
+    
+   <div class="pas">
+    <input type="password" id="password" placeholder="Enter Password" oninput="hidePassword()">
+    <button id="passwordHint" onclick="checkPassword()">Enter</button>
+   </div>
+   <div class="content">
+    <p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpiYe4nU8hrCOTG5ea8gw7RnyKkMCdEnYOqyFHAtK6KQ&s" alt="Funny">
+        <img src="https://images.pexels.com/photos/35537/child-children-girl-happy.jpg?cs=srgb&dl=pexels-bess-hamiti-35537.jpg&fm=jpg" height="400"  alt="V & P">
+        <img src="https://media.tenor.com/Duc7gUlXkdYAAAAM/level-up.gif" alt="Level Up">
+    </p>
+   </div> 
+   <div class="image-container" onclick="toggleAudioPlayer()">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR387SBxQXQDN8Gjtde11iKzwWkLwRWNaW0JpwKfF4TbQ&s" alt="Clickable Image">
+    <!-- Audio player -->
+    <div class="audio-player">
+        <audio controls>
+            <source src="Tumhe Kitna Pyaar Karte(PagalWorld.com.cm).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</div>
+<div class="content">
+    <p>
+        <!-- Add the exciting image here -->
+        <img src="https://i.ytimg.com/vi/F3PJgdsCrXw/maxresdefault.jpg" alt="Exciting Image" class="exciting-image">
+    </p>
+</div>
+
+<script>
+    function toggleAudioPlayer() {
+        var audioPlayer = document.querySelector('.audio-player');
+        if (audioPlayer.style.display === 'none') {
+            audioPlayer.style.display = 'block';
+        } else {
+            audioPlayer.style.display = 'none';
+        }
+    }
+
+    function checkPassword() {
+        var password = "vansh-phalak"; // Replace with your actual password
+        var enteredPassword = document.getElementById("password").value;
+        if (enteredPassword === password) {
+            console.log("Password Correct. Redirecting..."); // Log password match for debugging
+            // Redirect to a different HTML file or do something else
+            window.location.href = "contact.html";
+        } else {
+            console.log("Incorrect password entered."); // Log incorrect password for debugging
+            alert("Incorrect password. Hint: the password is 'The most loving part of our life .. related to future'");
+        }
+    }
+
+    function hidePassword() {
+        var password
+    }
+</script>
+
+</body>
+</html>
